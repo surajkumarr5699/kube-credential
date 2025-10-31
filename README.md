@@ -224,7 +224,7 @@ kube-credential/
 ### 1. Clone the Repository
 
 ```bash
-cd /home/gtf4/Documents/kube-credential
+cd /kube-credential
 ```
 
 ### 2. Setup Issuance Service
@@ -571,18 +571,6 @@ Response (200 - Invalid):
   - Shows load distribution
   - Meets assignment requirements
 
-## 📝 Assumptions
-
-1. **Credential Uniqueness**: Credentials are uniquely identified by their `id` field
-2. **Credential Immutability**: Once issued, credentials cannot be modified (only verified)
-3. **Data Persistence**: SQLite is sufficient for the assignment; production would use a distributed database
-4. **Network Reliability**: Services can communicate over HTTP within the cluster
-5. **Authentication**: No authentication/authorization implemented (would be added for production)
-6. **Credential Format**: JSON format is sufficient for credential representation
-7. **Verification Logic**: Verification checks all credential fields match exactly
-8. **Scalability**: Services are stateless (except for the database) and can be horizontally scaled
-9. **Cloud Provider**: Any cloud provider with Kubernetes support works
-
 ## 🔒 Security Considerations (Production)
 
 For production deployment, consider:
@@ -597,16 +585,3 @@ For production deployment, consider:
 8. **Network Policies**: Implement Kubernetes Network Policies
 9. **Image Scanning**: Scan Docker images for vulnerabilities
 10. **Audit Logging**: Comprehensive audit trail
-
-## 🚀 Future Enhancements
-
-1. **Persistent Storage**: Replace SQLite with PostgreSQL/MongoDB
-2. **Message Queue**: Add RabbitMQ/Kafka for async operations
-3. **Caching**: Implement Redis for frequently accessed data
-4. **Monitoring**: Add Prometheus and Grafana
-5. **Logging**: Centralized logging with ELK stack
-6. **CI/CD**: GitHub Actions or GitLab CI pipeline
-7. **API Gateway**: Kong or cloud provider API Gateway
-8. **Service Mesh**: Istio for advanced traffic management
-9. **Blockchain**: Store credential hashes on blockchain for immutability
-10. **Mobile App**: React Native mobile application
